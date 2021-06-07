@@ -17,14 +17,14 @@ final class FillWithColor {
     }
     
     func fillWithColor(_ image: [[Int]], _ row: Int, _ column: Int, _ newColor: Int) -> [[Int]] {
-        var newImage = image
-        let oldColor = image[row][column]
-        
         if image == [] { return [] }
         
         if row < 0 || column < 0 || row >= image.count || column >= image[0].count {
             return image
         }
+        
+        var newImage = image
+        let oldColor = image[row][column]
         
         fillCell(&newImage, row, column, newColor, oldColor)
         
